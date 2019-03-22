@@ -7,8 +7,7 @@
   "prefer-stable": true,
   "minimum-stability": "stable",
   "require": {
-    "php": "^7.2",
-    "ulrack/search": "^1.0"
+    "php": "^7.2"
   },
   "authors": [
     {

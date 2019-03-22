@@ -22,7 +22,14 @@ The implementation of a `\Ulrack\Transaction\Common\RequestInterface` is provide
 in `\Ulrack\Transaction\Transaction\Request`.
 Requests expect their arguments in the constructor.
 
-The first argument expects a method. This method can be picked from the
+
+The first argument expects a target for the request.
+In the case of a HTTP request this would the URI for the request.
+
+The second argument is the payload of the request.
+The payload would be the body of a request, in the case of a HTTP POST request, this would be the form data.
+
+The third argument expects a method. This method can be picked from the
 `\Ulrack\Transaction\Common\RequestInterface` and should be one of:
 - `RequestInterface::METHOD_GET`
 - `RequestInterface::METHOD_POST`
@@ -30,16 +37,10 @@ The first argument expects a method. This method can be picked from the
 - `RequestInterface::METHOD_PATCH`
 - `RequestInterface::METHOD_DELETE`
 
-The second argument expects a target for the request.
-In the case of a HTTP request this would the URI for the request.
+The fourth argument is optional and expects an associative array with parameters.
+In the case of a HTTP request, this expects the GET parameters.
 
-The third argument is the payload of the request.
-The payload would be the body of a request, in the case of a HTTP POST request, this would be the form data.
-
-The fourth argument is optional and expects an associative array with headers.
-
-The fifth argument is also optional and expects a `SearchCriteriaInterface` object.
-In the case of a HTTP GET request this would be cause the GET parameters to be filled.
+The fifth argument is optional and expects an associative array with headers.
 
 ### Response
 

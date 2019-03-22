@@ -9,7 +9,6 @@ namespace Ulrack\Transaction\Tests\Transaction;
 use PHPUnit\Framework\TestCase;
 use Ulrack\Transaction\Transaction\Request;
 use Ulrack\Transaction\Common\RequestInterface;
-use Ulrack\Search\Common\SearchCriteriaInterface;
 use Ulrack\Transaction\Exception\HeaderNotFoundException;
 
 /**
@@ -27,17 +26,16 @@ class RequestTest extends TestCase
      * @covers ::getHeader
      * @covers ::getTarget
      * @covers ::getPayload
-     * @covers ::getSearchCriteria
+     * @covers ::getParameters
      */
     public function testRequest(): void
     {
-        $searchCriteria = $this->createMock(SearchCriteriaInterface::class);
         $subject = new Request(
-            RequestInterface::METHOD_GET,
             'foo',
             ['bar' => 'baz'],
+            RequestInterface::METHOD_GET,
             ['baz' => 'qux'],
-            $searchCriteria
+            ['foo' => 'bar']
         );
 
         $this->assertInstanceOf(Request::class, $subject);
@@ -46,7 +44,7 @@ class RequestTest extends TestCase
         $this->assertEquals('qux', $subject->getHeader('baz'));
         $this->assertEquals('foo', $subject->getTarget());
         $this->assertEquals(['bar' => 'baz'], $subject->getPayload());
-        $this->assertEquals($searchCriteria, $subject->getSearchCriteria());
+        $this->assertEquals(['foo' => 'bar'], $subject->getParameters());
         $this->expectException(HeaderNotFoundException::class);
         $subject->getHeader('foo');
     }

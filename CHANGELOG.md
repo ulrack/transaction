@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.0 - 2019-03-22
+### Added
+- Added parameters to the Request interface and implementation.
+
+### Changed
+- Order of constructor parameters
+- Default value of the request method.
+
+### Deprecated
+- Nothing
+
+### Removed
+- SearchCriteria dependency by expecting GET parameters as an associative array.
+
+### Fixed
+- Nothing
+
+### Security
+- Nothing
+
+
 ## 1.0.0 - 2019-03-05
 ### Added
 - Initial implementation of ulrack/transaction
@@ -29,4 +50,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - Nothing
 
-[Unreleased]: https://github.com/ulrack/transaction/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/ulrack/transaction/compare/2.0.0...HEAD
+[1.0.0]: https://github.com/ulrack/transaction/compare/1.0.0...2.0.0

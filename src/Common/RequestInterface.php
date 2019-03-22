@@ -6,8 +6,6 @@
 
 namespace Ulrack\Transaction\Common;
 
-use Ulrack\Search\Common\SearchCriteriaInterface;
-
 interface RequestInterface
 {
     /**
@@ -88,9 +86,9 @@ interface RequestInterface
     public function getPayload();
 
     /**
-     * Retrieves the search criteria for the request.
+     * Retrieves a associative array of parameters of the request.
      *
-     * @return SearchCriteriaInterface|null
+     * @return array|null
      */
-    public function getSearchCriteria(): ?SearchCriteriaInterface;
+    public function getParameters(): ?array;
 }

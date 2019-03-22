@@ -8,7 +8,6 @@ namespace Ulrack\Transaction\Transaction;
 
 use Ulrack\Transaction\Common\RequestInterface;
 use Ulrack\Transaction\Exception\HeaderNotFoundException;
-use Ulrack\Search\Common\SearchCriteriaInterface;
 
 class Request implements RequestInterface
 {
@@ -24,30 +23,30 @@ class Request implements RequestInterface
     /** @var mixed */
     private $payload;
 
-    /** @var SearchCriteriaInterface|null */
-    private $searchCriteria;
+    /** @var array|null */
+    private $parameters;
 
     /**
      * Constructor
      *
-     * @param string                       $method
-     * @param string                       $target
-     * @param mixed                        $payload
-     * @param array|null                   $headers
-     * @param SearchCriteriaInterface|null $searchCriteria
+     * @param string     $target
+     * @param mixed      $payload
+     * @param array      $parameters
+     * @param string     $method
+     * @param array|null $headers
      */
     public function __construct(
-        string $method,
         string $target,
         $payload,
+        string $method = RequestInterface::METHOD_GET,
         array $headers = null,
-        SearchCriteriaInterface $searchCriteria = null
+        array $parameters = null
     ) {
-        $this->method = $method;
-        $this->headers = $headers;
         $this->target = $target;
         $this->payload = $payload;
-        $this->searchCriteria = $searchCriteria;
+        $this->method = $method;
+        $this->headers = $headers;
+        $this->parameters = $parameters;
     }
 
     /**
@@ -109,12 +108,12 @@ class Request implements RequestInterface
     }
 
     /**
-     * Retrieves the search criteria for the request.
+     * Retrieves a associative array of parameters of the request.
      *
-     * @return SearchCriteriaInterface|null
+     * @return array|null
      */
-    public function getSearchCriteria(): ?SearchCriteriaInterface
+    public function getParameters(): ?array
     {
-        return $this->searchCriteria;
+        return $this->parameters;
     }
 }
