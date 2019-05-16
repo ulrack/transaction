@@ -7,6 +7,7 @@
 namespace Ulrack\Transaction\Transaction;
 
 use Ulrack\Transaction\Common\RequestInterface;
+use Ulrack\Transaction\Common\MethodEnum;
 use Ulrack\Transaction\Exception\HeaderNotFoundException;
 
 class Request implements RequestInterface
@@ -29,22 +30,22 @@ class Request implements RequestInterface
     /**
      * Constructor
      *
+     * @param MethodEnum $method
      * @param string     $target
+     * @param array|null $parameters
      * @param mixed      $payload
-     * @param array      $parameters
-     * @param string     $method
      * @param array|null $headers
      */
     public function __construct(
+        MethodEnum $method,
         string $target,
-        $payload,
-        string $method = RequestInterface::METHOD_GET,
-        array $headers = null,
-        array $parameters = null
+        array $parameters = null,
+        $payload = null,
+        array $headers = null
     ) {
+        $this->method = (string) $method;
         $this->target = $target;
         $this->payload = $payload;
-        $this->method = $method;
         $this->headers = $headers;
         $this->parameters = $parameters;
     }

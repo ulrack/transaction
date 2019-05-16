@@ -8,7 +8,7 @@ namespace Ulrack\Transaction\Tests\Transaction;
 
 use PHPUnit\Framework\TestCase;
 use Ulrack\Transaction\Transaction\Request;
-use Ulrack\Transaction\Common\RequestInterface;
+use Ulrack\Transaction\Common\MethodEnum;
 use Ulrack\Transaction\Exception\HeaderNotFoundException;
 
 /**
@@ -31,15 +31,15 @@ class RequestTest extends TestCase
     public function testRequest(): void
     {
         $subject = new Request(
+            MethodEnum::GET(),
             'foo',
+            ['foo' => 'bar'],
             ['bar' => 'baz'],
-            RequestInterface::METHOD_GET,
-            ['baz' => 'qux'],
-            ['foo' => 'bar']
+            ['baz' => 'qux']
         );
 
         $this->assertInstanceOf(Request::class, $subject);
-        $this->assertEquals(RequestInterface::METHOD_GET, $subject->getMethod());
+        $this->assertEquals((string) MethodEnum::GET(), $subject->getMethod());
         $this->assertEquals(['baz' => 'qux'], $subject->getHeaders());
         $this->assertEquals('qux', $subject->getHeader('baz'));
         $this->assertEquals('foo', $subject->getTarget());

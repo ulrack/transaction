@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.0.0 - 2019-05-16
+### Added
+- MethodEnum to make a more strict definition of the available methods.
+
+### Changed
+- Order of parameters for the Request object constructor.
+
+### Deprecated
+- Nothing
+
+### Removed
+- RequestInterface method definitions.
+
+### Fixed
+- Nothing
+
+### Security
+- Nothing
+
 ## 2.0.0 - 2019-03-22
 ### Added
 - Added parameters to the Request interface and implementation.
@@ -23,7 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 - Nothing
-
 
 ## 1.0.0 - 2019-03-05
 ### Added
@@ -50,5 +68,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - Nothing
 
-[Unreleased]: https://github.com/ulrack/transaction/compare/2.0.0...HEAD
-[1.0.0]: https://github.com/ulrack/transaction/compare/1.0.0...2.0.0
+[Unreleased]: https://github.com/ulrack/transaction/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/ulrack/transaction/compare/2.0.0...3.0.0
+[2.0.0]: https://github.com/ulrack/transaction/compare/1.0.0...2.0.0
