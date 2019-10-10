@@ -32,9 +32,9 @@ interface ResponseInterface
     /**
      * Retrieves the response headers.
      *
-     * @return string[]|null
+     * @return string[]
      */
-    public function getHeaders(): ?array;
+    public function getHeaders(): array;
 
     /**
      * Retrieves a header by its' name.

@@ -12,10 +12,10 @@ use Ulrack\Transaction\Exception\HeaderNotFoundException;
 
 class Request implements RequestInterface
 {
-    /** @var string */
+    /** @var MethodEnum */
     private $method;
 
-    /** @var array|null */
+    /** @var array */
     private $headers;
 
     /** @var string */
@@ -24,7 +24,7 @@ class Request implements RequestInterface
     /** @var mixed */
     private $payload;
 
-    /** @var array|null */
+    /** @var array */
     private $parameters;
 
     /**
@@ -32,18 +32,18 @@ class Request implements RequestInterface
      *
      * @param MethodEnum $method
      * @param string     $target
-     * @param array|null $parameters
+     * @param array      $parameters
      * @param mixed      $payload
-     * @param array|null $headers
+     * @param array      $headers
      */
     public function __construct(
         MethodEnum $method,
         string $target,
-        array $parameters = null,
+        array $parameters = [],
         $payload = null,
-        array $headers = null
+        array $headers = []
     ) {
-        $this->method = (string) $method;
+        $this->method = $method;
         $this->target = $target;
         $this->payload = $payload;
         $this->headers = $headers;
@@ -53,9 +53,9 @@ class Request implements RequestInterface
     /**
      * Retrieves the method of the request.
      *
-     * @return string
+     * @return MethodEnum
      */
-    public function getMethod(): string
+    public function getMethod(): MethodEnum
     {
         return $this->method;
     }
@@ -65,7 +65,7 @@ class Request implements RequestInterface
      *
      * @return string[]
      */
-    public function getHeaders(): ?array
+    public function getHeaders(): array
     {
         return $this->headers;
     }
@@ -111,9 +111,9 @@ class Request implements RequestInterface
     /**
      * Retrieves a associative array of parameters of the request.
      *
-     * @return array|null
+     * @return array
      */
-    public function getParameters(): ?array
+    public function getParameters(): array
     {
         return $this->parameters;
     }

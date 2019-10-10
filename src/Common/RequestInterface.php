@@ -11,16 +11,16 @@ interface RequestInterface
     /**
      * Retrieves the method of the request.
      *
-     * @return string
+     * @return MethodEnum
      */
-    public function getMethod(): string;
+    public function getMethod(): MethodEnum;
 
     /**
      * Retrieves the request headers.
      *
-     * @return string[]|null
+     * @return string[]
      */
-    public function getHeaders(): ?array;
+    public function getHeaders(): array;
 
     /**
      * Retrieves a header by its' name.
@@ -48,7 +48,7 @@ interface RequestInterface
     /**
      * Retrieves a associative array of parameters of the request.
      *
-     * @return array|null
+     * @return array
      */
-    public function getParameters(): ?array;
+    public function getParameters(): array;
 }

@@ -20,22 +20,22 @@ class Response implements ResponseInterface
     /** @var int */
     private $statusCode;
 
-    /** @var array|null */
+    /** @var array */
     private $headers;
 
     /**
      * Constructor
      *
-     * @param bool       $success
-     * @param mixed      $body
-     * @param int        $statusCode
-     * @param array|null $headers
+     * @param bool  $success
+     * @param mixed $body
+     * @param int   $statusCode
+     * @param array $headers
      */
     public function __construct(
         bool $success,
         $body,
         int $statusCode,
-        array $headers = null
+        array $headers = []
     ) {
         $this->success = $success;
         $this->body = $body;
@@ -76,9 +76,9 @@ class Response implements ResponseInterface
     /**
      * Retrieves the response headers.
      *
-     * @return null|string[]
+     * @return string[]
      */
-    public function getHeaders(): ?array
+    public function getHeaders(): array
     {
         return $this->headers;
     }

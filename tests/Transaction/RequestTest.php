@@ -39,7 +39,7 @@ class RequestTest extends TestCase
         );
 
         $this->assertInstanceOf(Request::class, $subject);
-        $this->assertEquals((string) MethodEnum::GET(), $subject->getMethod());
+        $this->assertEquals(MethodEnum::GET(), $subject->getMethod());
         $this->assertEquals(['baz' => 'qux'], $subject->getHeaders());
         $this->assertEquals('qux', $subject->getHeader('baz'));
         $this->assertEquals('foo', $subject->getTarget());

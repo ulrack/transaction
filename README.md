@@ -16,43 +16,55 @@ composer require ulrack/transaction
 
 ## Usage
 
-### Request
+### [Request](src/Transaction/Request.php)
 
-The implementation of a `\Ulrack\Transaction\Common\RequestInterface` is provided
-in `\Ulrack\Transaction\Transaction\Request`.
-Requests expect their arguments in the constructor.
+A simple data access object for defining incoming web requests.
+This instance requires one of the [MethodEnum](src/Common/MethodEnum.php) 
+options to be passed.
 
-The first argument expects a method. This method can be picked from the
-`\Ulrack\Transaction\Common\MethodEnum` and should be one of:
-- `MethodEnum::GET()`
-- `MethodEnum::POST()`
-- `MethodEnum::PUT()`
-- `MethodEnum::PATCH()`
-- `MethodEnum::DELETE()`
+### [Response](src/Transaction/Response.php)
 
-The second argument expects a target for the request.
-In the case of a HTTP request this would the URI for the request.
+A simple data access object for defining outgoing web responses. 
 
-The third argument is optional and expects an associative array with parameters.
-In the case of a HTTP request, this expects the GET parameters.
+### [Command](src/Transaction/Command.php)
 
-The fourth argument is optional and expects the payload of the request.
-The payload would be the body of a request, in the case of a HTTP POST request, this would be the form data.
+A simple data access object for defining incoming CLI instructions. 
 
-The fifth argument is optional and expects an associative array with headers.
+### Factories
 
-### Response
+#### [CommandFactory](src/Factory/CommandFactory.php)
 
-The implementation of a `\Ulrack\Transaction\Common\ResponseInterface` is provided
-in `\Ulrack\Transaction\Transaction\Response`.
+A static factory which creates [Commands](src/Transaction/Command.php) based on
+provided arguments. 
 
-The first parameter of a response object expects a boolean representing whether the request was success.
+The following example will generate a command object.
 
-The second parameter expects the body of the response which was received from the request.
+```php
+<?php
 
-The third parameter expects an integer representing the status code of the response.
+use Ulrack\Transaction\Factory\CommandFactory;
+use Ulrack\Transaction\Common\CommandInterface;
 
-The fourth parameter is optional and expects an associative array of response headers.
+/** @var CommandInterface $subject */
+$subject = CommandFactory::create($_SERVER['argv']);
+```
+
+#### [RequestFactory](src/Factory/RequestFactory.php)
+
+A static factory which creates [Requests](src/Transaction/Request.php) based on
+provided arguments. 
+
+The following example will generate a request object.
+
+```php
+<?php
+
+use Ulrack\Transaction\Factory\RequestFactory;
+use Ulrack\Transaction\Common\RequestInterface;
+
+/** @var RequestInterface $subject */
+$subject = RequestFactory::create($_SERVER, $_GET, $_POST);
+```
 
 ## Change log
 
