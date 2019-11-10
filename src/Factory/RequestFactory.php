@@ -7,7 +7,7 @@
 namespace Ulrack\Transaction\Factory;
 
 use Ulrack\Transaction\Common\MethodEnum;
-use Ulrack\Transaction\Transaction\Request;
+use Ulrack\Transaction\Component\Request;
 use Ulrack\Transaction\Common\RequestInterface;
 use Ulrack\Transaction\Exception\InvalidRequestException;
 

@@ -4,7 +4,7 @@
  * See LICENSE for license details.
  */
 
-namespace Ulrack\Transaction\Transaction;
+namespace Ulrack\Transaction\Component;
 
 use Ulrack\Transaction\Common\RequestInterface;
 use Ulrack\Transaction\Common\MethodEnum;

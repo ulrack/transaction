@@ -4,13 +4,13 @@
  * See LICENSE for license details.
  */
 
-namespace Ulrack\Transaction\Tests\Transaction;
+namespace Ulrack\Transaction\Tests\Component;
 
 use PHPUnit\Framework\TestCase;
-use Ulrack\Transaction\Transaction\Command;
+use Ulrack\Transaction\Component\Command;
 
 /**
- * @coversDefaultClass \Ulrack\Transaction\Transaction\Command
+ * @coversDefaultClass \Ulrack\Transaction\Component\Command
  */
 class CommandTest extends TestCase
 {

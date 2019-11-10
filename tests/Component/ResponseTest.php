@@ -4,15 +4,15 @@
  * See LICENSE for license details.
  */
 
-namespace Ulrack\Transaction\Tests\Transaction;
+namespace Ulrack\Transaction\Tests\Component;
 
 use PHPUnit\Framework\TestCase;
-use Ulrack\Transaction\Transaction\Response;
+use Ulrack\Transaction\Component\Response;
 use Ulrack\Search\Common\SearchCriteriaInterface;
 use Ulrack\Transaction\Exception\HeaderNotFoundException;
 
 /**
- * @coversDefaultClass \Ulrack\Transaction\Transaction\Response
+ * @coversDefaultClass \Ulrack\Transaction\Component\Response
  * @covers \Ulrack\Transaction\Exception\HeaderNotFoundException
  */
 class ResponseTest extends TestCase

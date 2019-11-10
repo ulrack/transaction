@@ -16,17 +16,17 @@ composer require ulrack/transaction
 
 ## Usage
 
-### [Request](src/Transaction/Request.php)
+### [Request](src/Component/Request.php)
 
 A simple data access object for defining incoming web requests.
 This instance requires one of the [MethodEnum](src/Common/MethodEnum.php) 
 options to be passed.
 
-### [Response](src/Transaction/Response.php)
+### [Response](src/Component/Response.php)
 
 A simple data access object for defining outgoing web responses. 
 
-### [Command](src/Transaction/Command.php)
+### [Command](src/Component/Command.php)
 
 A simple data access object for defining incoming CLI instructions. 
 
@@ -34,7 +34,7 @@ A simple data access object for defining incoming CLI instructions.
 
 #### [CommandFactory](src/Factory/CommandFactory.php)
 
-A static factory which creates [Commands](src/Transaction/Command.php) based on
+A static factory which creates [Commands](src/Component/Command.php) based on
 provided arguments. 
 
 The following example will generate a command object.

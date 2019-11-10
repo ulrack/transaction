@@ -4,15 +4,15 @@
  * See LICENSE for license details.
  */
 
-namespace Ulrack\Transaction\Tests\Transaction;
+namespace Ulrack\Transaction\Tests\Component;
 
 use PHPUnit\Framework\TestCase;
-use Ulrack\Transaction\Transaction\Request;
+use Ulrack\Transaction\Component\Request;
 use Ulrack\Transaction\Common\MethodEnum;
 use Ulrack\Transaction\Exception\HeaderNotFoundException;
 
 /**
- * @coversDefaultClass \Ulrack\Transaction\Transaction\Request
+ * @coversDefaultClass \Ulrack\Transaction\Component\Request
  * @covers \Ulrack\Transaction\Exception\HeaderNotFoundException
  */
 class RequestTest extends TestCase

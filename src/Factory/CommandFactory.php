@@ -6,7 +6,7 @@
 
 namespace Ulrack\Transaction\Factory;
 
-use Ulrack\Transaction\Transaction\Command;
+use Ulrack\Transaction\Component\Command;
 use Ulrack\Transaction\Common\CommandInterface;
 
 class CommandFactory
