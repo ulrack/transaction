@@ -19,23 +19,23 @@ composer require ulrack/transaction
 ### [Request](src/Component/Request.php)
 
 A simple data access object for defining incoming web requests.
-This instance requires one of the [MethodEnum](src/Common/MethodEnum.php) 
+This instance requires one of the [MethodEnum](src/Common/MethodEnum.php)
 options to be passed.
 
 ### [Response](src/Component/Response.php)
 
-A simple data access object for defining outgoing web responses. 
+A simple data access object for defining outgoing web responses.
 
 ### [Command](src/Component/Command.php)
 
-A simple data access object for defining incoming CLI instructions. 
+A simple data access object for defining incoming CLI instructions.
 
 ### Factories
 
 #### [CommandFactory](src/Factory/CommandFactory.php)
 
 A static factory which creates [Commands](src/Component/Command.php) based on
-provided arguments. 
+provided arguments.
 
 The following example will generate a command object.
 
@@ -52,7 +52,7 @@ $subject = CommandFactory::create($_SERVER['argv']);
 #### [RequestFactory](src/Factory/RequestFactory.php)
 
 A static factory which creates [Requests](src/Transaction/Request.php) based on
-provided arguments. 
+provided arguments.
 
 The following example will generate a request object.
 
@@ -76,7 +76,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT
 
 ## MIT License
 
-Copyright (c) 2019 Jyxon
+Copyright (c) 2019 GrizzIT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

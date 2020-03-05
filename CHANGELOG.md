@@ -4,24 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 5.0.0 - 2019-11-10
-### Added
-- Nothing
+## 5.0.1 - 2020-03-05
+### Changed
+- Changed company name references.
 
+## 5.0.0 - 2019-11-10
 ### Changed
 - Unified namespace conventions used across packages
-
-### Deprecated
-- Nothing
-
-### Removed
-- Nothing
-
-### Fixed
-- Nothing
-
-### Security
-- Nothing
 
 ## 4.0.0 - 2019-10-10
 ### Added
@@ -29,21 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Factories for Requests and Commands.
 
 ### Changed
-- Request and response methods return types to simplify implementing the 
+- Request and response methods return types to simplify implementing the
 objects in applications.
 - Simplified the README for easier maintenance.
-
-### Deprecated
-- Nothing
-
-### Removed
-- Nothing
-
-### Fixed
-- Nothing
-
-### Security
-- Nothing
 
 ## 3.0.0 - 2019-05-16
 ### Added
@@ -52,17 +29,8 @@ objects in applications.
 ### Changed
 - Order of parameters for the Request object constructor.
 
-### Deprecated
-- Nothing
-
 ### Removed
 - RequestInterface method definitions.
-
-### Fixed
-- Nothing
-
-### Security
-- Nothing
 
 ## 2.0.0 - 2019-03-22
 ### Added
@@ -72,17 +40,8 @@ objects in applications.
 - Order of constructor parameters
 - Default value of the request method.
 
-### Deprecated
-- Nothing
-
 ### Removed
 - SearchCriteria dependency by expecting GET parameters as an associative array.
-
-### Fixed
-- Nothing
-
-### Security
-- Nothing
 
 ## 1.0.0 - 2019-03-05
 ### Added
@@ -94,22 +53,8 @@ objects in applications.
 - `Ulrack\Transaction\Exception\HeaderNotFoundException`
 - Unit Tests
 
-### Changed
-- Nothing
-
-### Deprecated
-- Nothing
-
-### Removed
-- Nothing
-
-### Fixed
-- Nothing
-
-### Security
-- Nothing
-
-[Unreleased]: https://github.com/ulrack/transaction/compare/5.0.0...HEAD
+[Unreleased]: https://github.com/ulrack/transaction/compare/5.0.1...HEAD
+[5.0.1]: https://github.com/ulrack/transaction/compare/5.0.0...5.0.1
 [5.0.0]: https://github.com/ulrack/transaction/compare/4.0.0...5.0.0
 [4.0.0]: https://github.com/ulrack/transaction/compare/3.0.0...4.0.0
 [3.0.0]: https://github.com/ulrack/transaction/compare/2.0.0...3.0.0

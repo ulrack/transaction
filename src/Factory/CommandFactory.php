@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) Jyxon, Inc. All rights reserved.
+ * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
  */
 
@@ -26,7 +26,7 @@ class CommandFactory
             )
         );
     }
-    
+
     /**
      * Prepare the CLI arguments.
      *
@@ -57,7 +57,7 @@ class CommandFactory
                 if (empty($arguments[0])
                 || substr($arguments[0], 0, 1) === '-') {
                     $flags[] = ltrim($argument, '-');
-                    
+
                     continue;
                 }
 
